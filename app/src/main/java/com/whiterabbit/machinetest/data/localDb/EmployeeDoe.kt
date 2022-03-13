@@ -15,7 +15,7 @@ interface EmployeeDoe {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertItems(employees: List<Employee>)
 
-    @Query("SELECT * FROM employee")
+    @Query("SELECT * FROM employees")
     fun getEmployeesFromDb(): List<Employee>
 
 }

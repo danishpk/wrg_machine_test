@@ -22,7 +22,7 @@ class EmployeeListAdapter(private val onClick: (employee: Employee) -> Unit,
             ) {
                 itemBinding.apply {
                     tvEmployeeName.text = employee.name
-                    tvCompanyName.text = employee.employeeCompany?.name
+                    tvCompanyName.text = employee.employeeCompany?.companyName
 
                     Glide.with(itemView)
                         .load(employee.profileImage)

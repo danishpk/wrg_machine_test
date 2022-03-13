@@ -2,8 +2,10 @@ package com.whiterabbit.machinetest.data.models
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class Geo(
     @SerializedName("lat")
     val lat: Double?,

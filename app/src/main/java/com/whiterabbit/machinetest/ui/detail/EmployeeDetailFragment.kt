@@ -44,7 +44,7 @@ class EmployeeDetailFragment : Fragment() {
             tvEmployeePhone.text = employee?.phone
             tvEmployeeWebsite.text = employee?.website
             "${employee?.employeeAddress?.street}, ${employee?.employeeAddress?.city}".also { tvEmployeeAddress.text = it }
-            "${employee?.employeeCompany?.name}, ${employee?.employeeCompany?.bs}".also { tvEmployeeCompany.text = it }
+            "${employee?.employeeCompany?.companyName}, ${employee?.employeeCompany?.bs}".also { tvEmployeeCompany.text = it }
             Glide.with(requireContext())
                 .load(employee?.profileImage)
                 .centerCrop()

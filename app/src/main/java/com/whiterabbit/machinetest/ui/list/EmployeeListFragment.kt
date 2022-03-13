@@ -2,6 +2,7 @@ package com.whiterabbit.machinetest.ui.list
 
 import EmployeeListAdapter
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -46,8 +47,24 @@ class EmployeeListFragment : Fragment() {
             binding.pbLoading.isVisible = it is Resource.Loading
             binding.rvEmployees.isVisible = it is Resource.Success
             if (it is Resource.Success) {
-                binding.tvEmptyText.isVisible = it.data.isNullOrEmpty()
-                employeeListAdapter.submitList(it.data)
+                it.data?.let { employees ->
+                    viewModel.insertData(
+                        employees
+                    )
+                }
+                viewModel.fetchEmployeesFromDb()
+            }
+        })
+
+        viewModel.employeesLocal.observe(viewLifecycleOwner, {
+            binding.pbLoading.isVisible = it is Resource.Loading
+            if (it is Resource.Success) {
+                if (it.data.isNullOrEmpty()) {
+                    viewModel.fetchEmployeesFromApi()
+                } else {
+                    binding.tvEmptyText.isVisible = it.data.isNullOrEmpty()
+                    employeeListAdapter.submitList(it.data)
+                }
             }
         })
     }

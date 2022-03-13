@@ -3,11 +3,12 @@ package com.whiterabbit.machinetest.data.models
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.room.ColumnInfo
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "employee")
+@Entity(tableName = "employees")
 data class Employee(
 
     @PrimaryKey
@@ -20,7 +21,7 @@ data class Employee(
     val name: String?,
 
     @SerializedName("username")
-    @ColumnInfo(name = "name")
+    @ColumnInfo(name = "username")
     val username: String?,
 
     @SerializedName("email")
@@ -32,18 +33,23 @@ data class Employee(
     val profileImage: String?,
 
     @SerializedName("address")
+    @Embedded
     val employeeAddress: EmployeeAddress?,
 
     @SerializedName("geo")
+    @Embedded
     val geo: Geo?,
 
     @SerializedName("phone")
+    @ColumnInfo(name = "phone")
     val phone: String?,
 
     @SerializedName("website")
+    @ColumnInfo(name = "website")
     val website: String?,
 
     @SerializedName("company")
+    @Embedded
     val employeeCompany: EmployeeCompany?,
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
