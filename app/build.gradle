@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -40,6 +41,7 @@ ext.lifecycleVersion = '2.4.1'
 ext.retrofitVersion = '2.9.0'
 ext.okhttpVersion = '4.9.0'
 ext.coroutineVersion = '1.5.0'
+ext.navVersion = '2.4.1'
 
 dependencies {
 
@@ -53,6 +55,7 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-ktx:$roomVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:$roomVersion"
     androidTestImplementation "androidx.room:room-testing:$roomVersion"
 
@@ -61,6 +64,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+
+    //Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.detail.EmployeeDetailFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivEmployeeImg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/employee_dp_description_text"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvEmployeeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toBottomOf="@+id/ivEmployeeImg"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                style="@style/TextAppearance.MaterialComponents.Headline6"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmployeeName"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvEmployeeEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAddressDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@string/employee_address_detail_label"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmployeeEmail"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvEmployeeAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toBottomOf="@+id/tvAddressDetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvEmployeePhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmployeeAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvEmployeeWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmployeePhone"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCompanyDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@string/employee_company_detail_label"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmployeeWebsite"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvEmployeeCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:layout_constraintTop_toBottomOf="@+id/tvCompanyDetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

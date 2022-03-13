@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WRG Machine Test</string>
+    <string name="employee_dp_description_text">Employee Dp</string>
+    <string name="employee_address_detail_label">Address Detail</string>
+    <string name="employee_company_detail_label">Company Detail</string>
+    <string name="no_employees_to_show_text">No employees to show</string>
 </resources>
